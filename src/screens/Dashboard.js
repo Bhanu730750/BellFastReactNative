@@ -44,7 +44,9 @@ const Dashboard = (props) => {
               }}>
               <TouchableOpacity
                 onPress={() =>
-                  props.navigation.navigate('PostaTaskForm', {s_id: 1})
+                  props.navigation.navigate('PostaTaskFormHouseKeeping', {
+                    s_id: 1,
+                  })
                 }>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <View
@@ -88,7 +90,7 @@ const Dashboard = (props) => {
               }}>
               <TouchableOpacity
                 onPress={() =>
-                  props.navigation.navigate('PostaTaskForm', {s_id: 2})
+                  props.navigation.navigate('PostaTaskFormLaundry', {s_id: 2})
                 }>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <View
@@ -173,7 +175,7 @@ const Dashboard = (props) => {
               }}>
               <TouchableOpacity
                 onPress={() =>
-                  props.navigation.navigate('PostaTaskForm', {s_id: 4})
+                  props.navigation.navigate('PostaTaskFormLaundry', {s_id: 4})
                 }>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <View

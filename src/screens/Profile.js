@@ -292,8 +292,7 @@ const localStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
-    marginLeft: 20,
-    marginRight: 20,
+    padding: 20,
   },
   linearGradient: {
     borderRadius: 20,

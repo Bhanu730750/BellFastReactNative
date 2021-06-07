@@ -24,6 +24,10 @@ import HousekeeperProfile from '../screens/HousekeeperProfile';
 import PostaTask from '../screens/PostaTask';
 import MyTask from '../screens/MyTask';
 import PostaTaskForm from '../screens/PostaTaskForm';
+
+import PostaTaskFormHouseKeeping from '../screens/PostaTaskFormHouseKeeping';
+import PostaTaskFormLaundry from '../screens/PostaTaskFormLaundry';
+
 import UpcomingBookings from '../screens/UpcomingBookings';
 import OngoiningBookings from '../screens/OngoiningBookings';
 import TaskDetails from '../screens/TaskDetails';
@@ -595,7 +599,15 @@ const OrderListNav = () => {
       <OrderListStack.Screen
         name="OngoiningBookings"
         component={OngoiningBookings}
-        options={{headerShown: false}}
+        options={{
+          title: 'Bookings',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
       />
       <OrderListStack.Screen
         name="TaskDetails"
@@ -633,7 +645,12 @@ const MessageNav = () => {
         component={MessageList}
         options={{
           title: 'Messages',
-          headerShown: true,
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
         }}
       />
       <MessageStack.Screen
@@ -641,13 +658,26 @@ const MessageNav = () => {
         component={MessageDetails}
         options={{
           title: 'Message Details',
-          headerShown: true,
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
         }}
       />
       <MessageStack.Screen
         name="SendMessage"
         component={SendMessage}
-        options={{headerShown: true}}
+        options={{
+          title: 'Send Message',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
       />
     </MessageStack.Navigator>
   );
@@ -667,18 +697,65 @@ const CustHomeStackNav = () => {
         component={PostaTaskForm}
         options={{
           title: 'Post Your Task',
-          headerShown: true,
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <HomeStack.Screen
+        name="PostaTaskFormHouseKeeping"
+        component={PostaTaskFormHouseKeeping}
+        options={{
+          title: 'Housekeeping Request',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <HomeStack.Screen
+        name="PostaTaskFormLaundry"
+        component={PostaTaskFormLaundry}
+        options={{
+          title: 'Laundry Request',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
         }}
       />
       <HomeStack.Screen
         name="Summary"
         component={Summary}
-        options={{headerShown: true}}
+        options={{
+          title: 'Summary',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
       />
       <HomeStack.Screen
         name="Success"
         component={Success}
-        options={{headerShown: false}}
+        options={{
+          title: 'Success',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
       />
     </HomeStack.Navigator>
   );

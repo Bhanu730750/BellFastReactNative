@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import {initLogin} from '../../store/actions/Auth';
 
 const Login = (props) => {
-  const [userid, setUserid] = useState('provider@gmail.com');
+  const [userid, setUserid] = useState('priti@gmail.com');
   const [password, setPassword] = useState('12');
   const [useridError, setUseridError] = useState('');
   const [passwordError, setPasswordError] = useState('');
