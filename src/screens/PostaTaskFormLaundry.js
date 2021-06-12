@@ -12,7 +12,7 @@ import moment from 'moment';
 import * as URL from '../config/Url';
 import {Picker} from '@react-native-community/picker';
 import Loader from '../components/Spinner';
-import RnIncrementDecrementBtn from 'react-native-increment-decrement-button';
+import NumericInput from 'react-native-numeric-input';
 
 const PostaTaskFormLaundry = (props) => {
   const {user, submitRequest, loading} = props;
@@ -24,6 +24,23 @@ const PostaTaskFormLaundry = (props) => {
   const [apartmentPicker, setApartmentPicker] = useState(
     'Select Apartment Type',
   );
+  const [initialValuePantsWash, setInitialValuePantsWash] = useState(0);
+  const [initialValueShirtsWash, setInitialValueShirtsWash] = useState(0);
+  const [initialValueTShirtsWash, setInitialValueTShirtsWash] = useState(0);
+  const [initialValueJeansWash, setInitialValueJeansWash] = useState(0);
+  const [
+    initialValueTraditionalWash,
+    setInitialValueTraditionalWash,
+  ] = useState(0);
+
+  const [initialValuePantsIro, setInitialValuePantsIro] = useState(0);
+  const [initialValueShirtsIro, setInitialValueShirtsIro] = useState(0);
+  const [initialValueTShirtsIro, setInitialValueTShirtsIro] = useState(0);
+  const [initialValueJeansIro, setInitialValueJeansIro] = useState(0);
+  const [initialValueTraditionalIro, setInitialValueTraditionalIro] = useState(
+    0,
+  );
+
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState(null);
   const [show, setShow] = useState(false);
@@ -145,12 +162,234 @@ const PostaTaskFormLaundry = (props) => {
               {serviceTitle}
             </Subheading>
           </View>
-          <RnIncrementDecrementBtn minVal={0} minreq={3} max={10} val={3} />
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
               marginBottom: 20,
+            }}>
+            <Subheading
+              style={{
+                fontFamily: 'Poppins-Medium',
+                fontSize: 18,
+                color: '#000',
+              }}>
+              Cloth Washing:
+            </Subheading>
+          </View>
+
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Paints</Text>
+            <NumericInput
+              value={initialValuePantsWash}
+              onChange={(value) => setInitialValuePantsWash(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Shirts</Text>
+            <NumericInput
+              value={initialValueShirtsWash}
+              minValue={1}
+              onChange={(value) => setInitialValueShirtsWash(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>T-Shirts</Text>
+            <NumericInput
+              value={initialValueTShirtsWash}
+              minValue={1}
+              onChange={(value) => setInitialValueTShirtsWash(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Jeans</Text>
+            <NumericInput
+              value={initialValueJeansWash}
+              minValue={1}
+              onChange={(value) => setInitialValueJeansWash(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Traditional</Text>
+            <NumericInput
+              value={initialValueTraditionalWash}
+              minValue={1}
+              onChange={(value) => setInitialValueTraditionalWash(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginBottom: 20,
+            }}>
+            <Subheading
+              style={{
+                fontFamily: 'Poppins-Medium',
+                fontSize: 18,
+                color: '#000',
+              }}>
+              Cloth Ironing:
+            </Subheading>
+          </View>
+
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Paints</Text>
+            <NumericInput
+              value={initialValuePantsIro}
+              onChange={(value) => setInitialValuePantsIro(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Shirts</Text>
+            <NumericInput
+              value={initialValueShirtsIro}
+              minValue={1}
+              onChange={(value) => setInitialValueShirtsIro(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>T-Shirts</Text>
+            <NumericInput
+              value={initialValueTShirtsIro}
+              minValue={1}
+              onChange={(value) => setInitialValueTShirtsIro(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Jeans</Text>
+            <NumericInput
+              value={initialValueJeansIro}
+              minValue={1}
+              onChange={(value) => setInitialValueJeansIro(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+          <View style={localStyles.numberInc}>
+            <Text style={{marginLeft: 10}}>Traditional</Text>
+            <NumericInput
+              value={initialValueTraditionalIro}
+              minValue={1}
+              onChange={(value) => setInitialValueTraditionalIro(value)}
+              onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+              totalWidth={90}
+              totalHeight={30}
+              iconSize={25}
+              step={1}
+              valueType="real"
+              rounded
+              textColor="#B0228C"
+              iconStyle={{color: 'white'}}
+              rightButtonBackgroundColor="#EA3788"
+              leftButtonBackgroundColor="#E56B70"
+            />
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginBottom: 20,
+              marginTop: 10,
             }}>
             <TouchableOpacity
               onPress={showDatepicker}
@@ -283,6 +522,7 @@ const PostaTaskFormLaundry = (props) => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginHorizontal: 30,
+            paddingBottom: 30,
           }}>
           <TouchableOpacity
             style={{borderWidth: 1, borderColor: '#a795e3', borderRadius: 25}}>
@@ -361,6 +601,11 @@ const localStyles = StyleSheet.create({
   navBarText: {
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
+  },
+  numberInc: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
   },
 });
 

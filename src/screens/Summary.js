@@ -14,7 +14,7 @@ import {useIsFocused} from '@react-navigation/native';
 
 const Summary = (props) => {
   const url = `${URL.WEB_URL2}`;
-  const {submit_request, status} = props;
+  const {submit_request, status, DynamicData} = props;
   const [isLoading, setIsLoading] = useState(false);
   const [serviceTitle, setServiceTitle] = useState('');
 
@@ -30,6 +30,17 @@ const Summary = (props) => {
     if (props.route.params.postdata.service_category) {
       if (props.route.params.postdata.service_category === 1) {
         setServiceTitle('Housekeeping');
+        const DynamicData = () => {
+          return (
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Subheading>Date</Subheading>
+              <Subheading style={{marginLeft: 20}}>
+                {props.route.params.postdata.apartmenttype}
+              </Subheading>
+            </View>
+          );
+        };
       }
       if (props.route.params.postdata.service_category === 2) {
         setServiceTitle('Errands');
@@ -87,6 +98,8 @@ const Summary = (props) => {
             <Subheading>Service</Subheading>
             <Subheading style={{marginLeft: 20}}>{serviceTitle}</Subheading>
           </View>
+          <Divider style={localStyles.divider} />
+          <DynamicData />
           <Divider style={localStyles.divider} />
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Subheading>Date</Subheading>

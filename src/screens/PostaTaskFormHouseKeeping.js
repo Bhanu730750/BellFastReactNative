@@ -86,7 +86,8 @@ const PostaTaskFormHouseKeeping = (props) => {
       reqDate != '' &&
       reqTime != '' &&
       address != '' &&
-      durationPicker != ''
+      durationPicker != '' &&
+      apartmentPicker != ''
     ) {
       dataArr.service_category = props.route.params.s_id;
       dataArr.details = description;
@@ -94,7 +95,7 @@ const PostaTaskFormHouseKeeping = (props) => {
       dataArr.on_time = reqTime;
       dataArr.address = address;
       dataArr.duration = durationPicker;
-      // console.log('dataArr', dataArr);
+      dataArr.apartmenttype = apartmentPicker;
       props.navigation.navigate('Summary', {postdata: dataArr});
     } else {
       description === ''
