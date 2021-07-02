@@ -25,7 +25,7 @@ import PostaTask from '../screens/PostaTask';
 import MyTask from '../screens/MyTask';
 import PostaTaskForm from '../screens/PostaTaskForm';
 
-import PostaTaskFormHouseKeeping from '../screens/PostaTaskFormHouseKeeping';
+import {PostaTaskFormHouseKeeping, HousekeepingSummary, Errands, ErrandsSummary, OtherJobs, OtherJobsSummary} from '../screens/services';
 import PostaTaskFormLaundry from '../screens/PostaTaskFormLaundry';
 
 import UpcomingBookings from '../screens/UpcomingBookings';
@@ -710,6 +710,71 @@ const CustHomeStackNav = () => {
         component={PostaTaskFormHouseKeeping}
         options={{
           title: 'Housekeeping Request',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <HomeStack.Screen
+        name="HousekeepingSummary"
+        component={HousekeepingSummary}
+        options={{
+          title: 'Confirmation',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+       <HomeStack.Screen
+        name="Errands"
+        component={Errands}
+        options={{
+          title: 'Errands Request',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <HomeStack.Screen
+        name="ErrandsSummary"
+        component={ErrandsSummary}
+        options={{
+          title: 'Confirmation',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+       <HomeStack.Screen
+        name="OtherJobs"
+        component={OtherJobs}
+        options={{
+          title: 'Other Jobs Request',
+          showIcon: true,
+          headerStyle: {
+            backgroundColor: '#F2F2F2',
+          },
+          headerTintColor: '#4f3cb2',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <HomeStack.Screen
+        name="OtherJobsSummary"
+        component={OtherJobsSummary}
+        options={{
+          title: 'Confirmation',
           showIcon: true,
           headerStyle: {
             backgroundColor: '#F2F2F2',

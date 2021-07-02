@@ -40,7 +40,7 @@ const Dashboard = (props) => {
                 height: 140,
                 borderRadius: 12,
                 marginTop: 10,
-                padding: 20,
+                padding: 15,
               }}>
               <TouchableOpacity
                 onPress={() =>
@@ -59,7 +59,7 @@ const Dashboard = (props) => {
                       justifyContent: 'center',
                     }}>
                     <MaterialCommunityIcons
-                      name="hanger"
+                      name="home-city-outline"
                       size={28}
                       color="#FFFFFF"
                     />
@@ -90,7 +90,7 @@ const Dashboard = (props) => {
               }}>
               <TouchableOpacity
                 onPress={() =>
-                  props.navigation.navigate('PostaTaskFormLaundry', {s_id: 2})
+                  props.navigation.navigate('Errands', {s_id: 2})
                 }>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <View
@@ -136,7 +136,7 @@ const Dashboard = (props) => {
               }}>
               <TouchableOpacity
                 onPress={() =>
-                  props.navigation.navigate('PostaTaskForm', {s_id: 3})
+                  props.navigation.navigate('OtherJobs', {s_id: 3})
                 }>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <View
